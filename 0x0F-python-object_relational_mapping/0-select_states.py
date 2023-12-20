@@ -13,9 +13,7 @@ if __name__ == '__main__':
         port=3306)
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states \
-                    WHERE name LIKE BINARY 'N%' \
-                    ORDER BY states.id ASC;")
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC;")
     for row in cursor.fetchall():
         print(row)
     cursor.close()
